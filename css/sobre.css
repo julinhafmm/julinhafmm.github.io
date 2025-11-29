@@ -1,0 +1,194 @@
+/* CONFIGURAÇÃO GERAL */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #2c3e50;
+    line-height: 1.7;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+    position: relative;
+}
+
+/* Efeito de partículas no fundo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+    z-index: -1;
+}
+
+/* CONTAINER CENTRAL */
+body p {
+    max-width: 800px;
+    font-size: 1.1em;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.1),
+        0 1px 8px rgba(255, 255, 255, 0.3) inset;
+    margin-bottom: 25px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Efeito de brilho sutil */
+body p::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transition: left 0.6s ease;
+}
+
+body p:hover::before {
+    left: 100%;
+}
+
+/* Efeito hover nos parágrafos */
+body p:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.15),
+        0 1px 8px rgba(255, 255, 255, 0.4) inset;
+}
+
+/* PRIMEIRO PARÁGRAFO COMO DESTAQUE */
+body p:first-of-type {
+    border-left: 6px solid #667eea;
+    background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+    padding: 50px;
+    position: relative;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* Elemento decorativo no primeiro parágrafo */
+body p:first-of-type::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 0 20px 0 80px;
+    opacity: 0.1;
+}
+
+/* SEGUNDO PARÁGRAFO */
+body p:last-of-type {
+    border-left: 6px solid #764ba2;
+    background: linear-gradient(135deg, #ffffff 0%, #faf8ff 100%);
+}
+
+/* TEXTO */
+p {
+    white-space: pre-line;
+    text-align: justify;
+    position: relative;
+    z-index: 1;
+}
+
+/* Realce de palavras importantes */
+body p:first-of-type strong {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+/* Animação de entrada suave */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body p {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+body p:last-of-type {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 15px;
+    }
+    
+    body p {
+        padding: 30px 25px;
+        margin-bottom: 20px;
+        font-size: 1em;
+    }
+    
+    body p:first-of-type {
+        padding: 35px 25px;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px 10px;
+    }
+    
+    body p {
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+    
+    body p:first-of-type {
+        padding: 30px 20px;
+        font-size: 1em;
+    }
+    
+    body p:first-of-type::after {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Efeito de foco para acessibilidade */
+body p:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+}

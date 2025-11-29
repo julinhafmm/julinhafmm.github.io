@@ -1,23 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prevent Me</title>
     <link rel="stylesheet" href="/julinhafmm.github.io/css/sobre.css">
+    <style>
+        /* Estilos específicos para esta página */
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .text-content {
+            width: 100%;
+        }
+        
+        .relogio-img {
+            max-width: 600px; /* Imagem bem maior */
+            width: 90%; /* Ocupa 90% da largura disponível */
+            height: auto;
+            border-radius: 20px;
+            margin-top: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid rgba(255, 255, 255, 0.8);
+        }
+        
+        .relogio-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Destaque extra para a imagem */
+        .image-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 30px;
+        }
+        
+        .image-container::before {
+            content: "⚡ NOSSO PRODUTO";
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 0.9em;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .relogio-img {
+                max-width: 500px;
+                width: 95%;
+                margin-top: 30px;
+            }
+            
+            .content-container {
+                max-width: 100%;
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .relogio-img {
+                max-width: 400px;
+                width: 100%;
+                margin-top: 25px;
+                border-radius: 15px;
+            }
+            
+            .image-container::before {
+                font-size: 0.8em;
+                padding: 6px 15px;
+                top: -20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <p>Somos a Prevent Me, uma equipe movida pela precisão e pela clareza.
-        Assim como na balística, cada detalhe do nosso projeto foi pensado para atingir o alvo com máxima eficiência.
-    </p>
+    <div class="content-container">
+        <div class="text-content">
+            <p>
+                Transformar a segurança no trabalho por meio de tecnologia vestível inteligente, garantindo que cada colaborador em áreas de risco retorne seguro para sua família, todos os dias.
+            </p>
 
-    <p>Acreditamos que, a partir de um estado central bem definido — um propósito claro e um time alinhado —, é possível transformar desafios complexos em soluções simples, monitoráveis e escaláveis.
-
-        Nosso diferencial?
-        A capacidade de perceber onde outros não veem.
-        Trabalhamos com colaboração genuína, onde cada membro traz sua expertise para construir, juntos, um futuro mais inteligente e integrado.
-
-        Aqui, não seguimos apenas o óbvio: criamos possibilidades.
-    </p>
+            <p>
+                Por trás de cada estatística, há um rosto. Por trás de cada acidente, um futuro interrompido. Quanto custa uma vida levada por um acidente de trabalho? O preço é imensurável, mas a prevenção não tem preço.
+            </p>
+        </div>
+        
+    
+    </div>
 </body>
 </html>
